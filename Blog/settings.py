@@ -68,23 +68,23 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': str(BASE_DIR + '/db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd30mo1jmnhooh7',
-        'USER': 'kmsoaoybazzfww',
-        'PASSWORD': '6bfac8c9558fac515f9a0c138194b12c836faff07bb5b169ec21c12b24d29e7c',
-        'HOST': 'ec2-54-211-255-161.compute-1.amazonaws.com',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(BASE_DIR + '/db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd30mo1jmnhooh7',
+#         'USER': 'kmsoaoybazzfww',
+#         'PASSWORD': '6bfac8c9558fac515f9a0c138194b12c836faff07bb5b169ec21c12b24d29e7c',
+#         'HOST': 'ec2-54-211-255-161.compute-1.amazonaws.com',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
