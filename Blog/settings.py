@@ -1,8 +1,12 @@
 from pathlib import Path
 import os
 
+import dj_database_url
+
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -64,10 +68,21 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': str(BASE_DIR + '/db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd30mo1jmnhooh7',
+        'USER': 'kmsoaoybazzfww',
+        'PASSWORD': '6bfac8c9558fac515f9a0c138194b12c836faff07bb5b169ec21c12b24d29e7c',
+        'HOST': 'ec2-54-211-255-161.compute-1.amazonaws.com',
+        'PORT': '',
     }
 }
 
@@ -108,12 +123,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'home/media')
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+STATIC_URL = '/static/'
 
+STATIC_ROOT = BASE_DIR + '/static'
+
+django_heroku.settings(locals())
